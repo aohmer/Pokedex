@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npx tsc",
+    "start": "node dist/main.js",
+    "dev": "npx tsc && node dist/main.js",
+    "test": "vitest --run"
   },
   "repository": {
     "type": "git",
@@ -18,13 +21,9 @@
   },
   "homepage": "https://github.com/aohmer/Pokedex#readme",
   "devDependencies": {
-    "@types/node": "^25.9.3",
-    "typescript": "^6.0.3"
+    "@types/node": "^25.9.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   },
-  "type": "module",
-  "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/main.js",
-    "dev": "npx tsc && node dist/main.js"
-  }
+  "type": "module"
 }
