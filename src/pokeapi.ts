@@ -1,7 +1,14 @@
+import { Cache } from "./pokecache.js";
+
 export class PokeAPI {
   private static readonly baseURL = "https://pokeapi.co/api/v2";
+  cache: Cache;
+  interval: number;
 
-  constructor() {}
+  constructor(interval: number) {
+    this.interval = interval;
+    this.cache = new Cache(interval);
+  }
 
   async fetchLocations(pageURL?: string): Promise<ShallowLocations> {
     const url = pageURL || `${PokeAPI.baseURL}/location-area`;
